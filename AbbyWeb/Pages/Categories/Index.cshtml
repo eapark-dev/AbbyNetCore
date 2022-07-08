@@ -1,0 +1,37 @@
+﻿@page
+@model AbbyWeb.Pages.Categories.IndexModel
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">카테고리 목록</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-page="create" class="btn btn-primary">등록</a>
+        </div>
+    </div>
+
+    <br /><br />
+
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    카테고리 이름
+                </th>
+                <th>
+                    디스플레이 순서
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var obj in Model.Categories)
+            {
+                <tr>
+                    <td>@obj.Name</td>
+                    <td>@obj.DisplayOrder</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
